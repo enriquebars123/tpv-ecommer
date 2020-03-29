@@ -1,0 +1,18 @@
+como crear el virtualEnv
+    *python -m venv nombreCarperta
+como activar el virtualEnv
+    *la carepeta/script/activate
+
+como intalar las librerias de requierements.txt
+    *pip insatall -r requirements.txt
+
+generar las migraciones
+    python manage.py makemigrations
+    python manage.py migrate
+
+correr el django
+    python manage.py runsever
+
+
+levantar la base de datos posgrs con docker
+    docker-compose -f build.yml up -d postgres
