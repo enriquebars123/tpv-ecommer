@@ -8,7 +8,6 @@ from django.contrib.auth.models import (
     AbstractBaseUser,
     PermissionsMixin,
 )
-from django.db import models
 from django.utils import timezone
 
 # Django
@@ -84,3 +83,18 @@ class user(AbstractBaseUser, PermissionsMixin):
     def __unicode__(self):
         return self.name
 
+
+class people(models.Model):
+    user = models.ForeignKey(user, on_delete=models.CASCADE)
+    lastName = models.CharField(max_length=250)
+    street = models.CharField(max_length=255)
+    colony = models.CharField(max_length=250)
+    postalCode = models.CharField(max_length=10)
+    cellPhone = models.CharField(max_length=30)
+    phone = models.CharField(max_length=30, blank=True)
+
+    class Meta:
+        db_table = 'people'
+    
+    def __str__(self):
+        return self.lastName

@@ -11,9 +11,11 @@ from rest_framework import status
 
 # serializer
 from apps_tpvCommerce.user.api.serializers import userSerializers
+from apps_tpvCommerce.user.api.serializers import peopleSerializers
 
 # Models
 from apps_tpvCommerce.user.models import user
+from apps_tpvCommerce.user.models import people
 
 
 # Utilerias
@@ -26,3 +28,7 @@ class UserViewSet(GeneralViewSetMixin, ModelViewSet):
     queryset = user.objects.all()
     serializer_class = userSerializers
 
+
+class PeopleViewSet(GeneralViewSetMixin, ModelViewSet):
+    queryset = people.objects.all()
+    serializer_class = peopleSerializers
