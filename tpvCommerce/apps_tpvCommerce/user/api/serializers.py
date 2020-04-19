@@ -22,7 +22,7 @@ class userSerializers(serializers.ModelSerializer):
         )
 
     def create(self, validated_data):
-        user = super(UserSerializers, self).create(
+        user = super(userSerializers, self).create(
             validated_data
         )
         user.set_password(validated_data['password'])
@@ -34,7 +34,7 @@ class userSerializers(serializers.ModelSerializer):
         if 'password' in validated_data:
             password = validated_data.pop('password')
             instance.set_password(password)
-        return super(UserSerializers, self).update(
+        return super(userSerializers, self).update(
             instance,
             validated_data,
         )
