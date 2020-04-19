@@ -6,6 +6,7 @@ from rest_framework import serializers
 import django_filters
 
 from apps_tpvCommerce.user.models import user
+from apps_tpvCommerce.user.models import people
 
 class userSerializers(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True,required=False)
@@ -37,3 +38,10 @@ class userSerializers(serializers.ModelSerializer):
             instance,
             validated_data,
         )
+
+
+class peopleSerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = people
+        fields = '__all__'
