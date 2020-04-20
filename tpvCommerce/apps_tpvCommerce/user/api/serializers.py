@@ -8,8 +8,9 @@ import django_filters
 from apps_tpvCommerce.user.models import user
 from apps_tpvCommerce.user.models import people
 
+
 class userSerializers(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True,required=False)
+    password = serializers.CharField(write_only=True, required=False)
 
     class Meta:
         model = user
@@ -28,7 +29,6 @@ class userSerializers(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
-
 
     def update(self, instance, validated_data):
         if 'password' in validated_data:

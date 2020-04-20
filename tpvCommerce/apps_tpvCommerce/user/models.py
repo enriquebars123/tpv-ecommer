@@ -13,7 +13,7 @@ from django.utils import timezone
 # Django
 from django.db import models
 from django.contrib.auth.models import User
-#from decouple import config
+# from decouple import config
 
 
 class userManager(BaseUserManager):
@@ -59,12 +59,12 @@ class userManager(BaseUserManager):
 class user(AbstractBaseUser, PermissionsMixin):
 
     username = models.CharField(max_length=250, unique=True)
-    email = models.EmailField(max_length=255, unique=True, null=False, blank=False)
+    email = models.EmailField(
+        max_length=255, unique=True, null=False, blank=False)
     name = models.CharField(max_length=250)
-    is_active  = models.BooleanField(default=False,)
+    is_active = models.BooleanField(default=False,)
     is_staff = models.BooleanField(default=False,)
     is_superuser = models.BooleanField(default=True,)
-   
 
     objects = userManager()
 
@@ -95,6 +95,6 @@ class people(models.Model):
 
     class Meta:
         db_table = 'people'
-    
+
     def __str__(self):
         return self.lastName

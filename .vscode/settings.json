@@ -1,3 +1,6 @@
 {
-    "python.pythonPath": "C:\\Users\\ASUS-PC\\Documents\\Desarrollo\\Proyectos\\tpv_ecomerce\\tpv-ecommer\\tpvCommerce\\tpvEnv\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\ASUS-PC\\Documents\\Desarrollo\\Proyectos\\tpv_ecomerce\\tpv-ecommer\\tpvCommerce\\tpvEnv\\Scripts\\python.exe",
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pylintEnabled": false
 }
