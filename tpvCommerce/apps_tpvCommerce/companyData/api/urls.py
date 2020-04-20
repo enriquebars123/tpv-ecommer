@@ -12,8 +12,8 @@ from apps_tpvCommerce.companyData.api.views import (
 )
 
 router = routers.DefaultRouter()
-router.register(r'^api/v1/companyData/cities', CityViewSet)
-router.register(r'^api/v1/companyData/zones', ZoneViewSet)
-router.register(r'^api/v1/companyData/dealers', DealerViewSet)
+router.register(r'^api/v1/companyData/city', CityViewSet)
+router.register(r'^api/v1/companyData/zone', ZoneViewSet)
+router.register(r'^api/v1/companyData/dealer', DealerViewSet)
 
 urlpatterns = router.urls

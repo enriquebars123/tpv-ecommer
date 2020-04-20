@@ -17,11 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from apps_tpvCommerce.user.api.views import *
+from apps_tpvCommerce.companyData.api.views import *
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('api/v1/user', UserViewSet)
 router.register('api/v1/people', PeopleViewSet)
+router.register('api/v1/company/zone', ZoneViewSet)
+router.register('api/v1/company/city', CityViewSet)
+router.register('api/v1/company/dealer', DealerViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
