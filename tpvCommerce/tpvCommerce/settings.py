@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'apps_tpvCommerce.user',
+    'apps_tpvCommerce.companyData'
 ]
 
 AUTH_USER_MODEL = 'user.user'
@@ -81,13 +82,13 @@ WSGI_APPLICATION = 'tpvCommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('POSTGRES_DB_NAME', 'db_tpv'), # noqa
-        'USER': os.environ.get('POSTGRES_DB_USER', 'postgres'), # noqa
-        'PASSWORD': os.environ.get('POSTGRES_DB_PASSWORD', 'tpvpos.1235'), # noqa
-        #'HOST': os.environ.get('POSTGRES_SERVICE_HOST', '192.168.0.22'), # noqa
-        'HOST': os.environ.get('POSTGRES_SERVICE_HOST', 'localhost'), # noqa
-        #'PORT': os.environ.get('POSTGRES_SERVICE_PORT', 5432), # noqa
-        'PORT': os.environ.get('POSTGRES_SERVICE_PORT', 45432), # noqa
+        'NAME': os.environ.get('POSTGRES_DB_NAME', 'db_tpv'),  # noqa
+        'USER': os.environ.get('POSTGRES_DB_USER', 'postgres'),  # noqa
+        'PASSWORD': os.environ.get('POSTGRES_DB_PASSWORD', 'tpvpos.1235'),  # noqa
+        'HOST': os.environ.get('POSTGRES_SERVICE_HOST', '192.168.0.22'),  # noqa
+        # 'HOST': os.environ.get('POSTGRES_SERVICE_HOST', 'localhost'), # noqa
+        'PORT': os.environ.get('POSTGRES_SERVICE_PORT', 5432),  # noqa
+        # 'PORT': os.environ.get('POSTGRES_SERVICE_PORT', 45432), # noqa
     },
 }
 

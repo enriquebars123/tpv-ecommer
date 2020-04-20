@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url, include 
-from apps_tpvCommerce.user.api.views import * 
+from django.conf.urls import url, include
+from apps_tpvCommerce.user.api.views import *
 from rest_framework import routers
 
 router = routers.DefaultRouter()
@@ -25,6 +25,10 @@ router.register('api/v1/people', PeopleViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(router.urls)),
-    url('', include(('apps_tpvCommerce.user.api.urls', 'Api_user'), namespace='Api_user')),
+    path('', include(router.urls)),
+    url('', include(
+        ('apps_tpvCommerce.user.api.urls', 'Api_user'), namespace='Api_user')),
+    url('', include(
+        ('apps_tpvCommerce.companyData.api.urls', 'Api_companyData'),
+        namespace='Api_companyData')),
 ]
