@@ -6,27 +6,22 @@ from rest_framework import serializers
 import django_filters
 
 # Models
-from apps_tpvCommerce.companyData.models import (
-    city, dealer, zone
-)
+from apps_tpvCommerce.companyData.models import *
 
 
-class zoneSerializer(serializers.ModelSerializer):
-
+class countrySerializer(serializers.ModelSerializer):
     class Meta:
-        model = zone
+        model = country
         fields = "__all__"
 
 
-class citySerializer(serializers.ModelSerializer):
-
+class townshipSerializer(serializers.ModelSerializer):
     class Meta:
-        model = city
+        model = township
         fields = "__all__"
 
 
 class dealerSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = dealer
         fields = "__all__"

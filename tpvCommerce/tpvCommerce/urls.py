@@ -23,8 +23,8 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register('api/v1/user', UserViewSet)
 router.register('api/v1/people', PeopleViewSet)
-router.register('api/v1/company/zone', ZoneViewSet)
-router.register('api/v1/company/city', CityViewSet)
+router.register('api/v1/company/country', CountryViewSet)
+router.register('api/v1/company/township', TownshipViewSet)
 router.register('api/v1/company/dealer', DealerViewSet)
 
 urlpatterns = [

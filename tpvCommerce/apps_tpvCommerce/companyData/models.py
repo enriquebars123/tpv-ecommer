@@ -1,22 +1,22 @@
 from django.db import models
 
 
-class zone(models.Model):
+class country(models.Model):
     name = models.CharField(max_length=250)
 
     class Meta:
-        db_table = "zone"
+        db_table = "country"
 
     def __str__(self):
         return self.name
 
 
-class city(models.Model):
+class township(models.Model):
     name = models.CharField(max_length=250)
-    zone = models.ForeignKey(zone, on_delete=models.CASCADE)
+    zone = models.ForeignKey(country, on_delete=models.CASCADE)
 
     class Meta:
-        db_table = "city"
+        db_table = "township"
 
     def __str__(self):
         return self.name
@@ -28,7 +28,7 @@ class dealer(models.Model):
     rut = models.CharField(max_length=80)
     phone = models.CharField(max_length=30)
     web = models.CharField(max_length=255)
-    city = models.ForeignKey(city, on_delete=models.CASCADE)
+    city = models.ForeignKey(township, on_delete=models.CASCADE)
 
     class Meta:
         db_table = "dealer"
