@@ -13,7 +13,7 @@ class country(models.Model):
 
 class township(models.Model):
     name = models.CharField(max_length=250)
-    zone = models.ForeignKey(country, on_delete=models.CASCADE)
+    country = models.ForeignKey(country, on_delete=models.CASCADE)
 
     class Meta:
         db_table = "township"
@@ -28,7 +28,7 @@ class dealer(models.Model):
     rut = models.CharField(max_length=80)
     phone = models.CharField(max_length=30)
     web = models.CharField(max_length=255)
-    city = models.ForeignKey(township, on_delete=models.CASCADE)
+    township = models.ForeignKey(township, on_delete=models.CASCADE)
 
     class Meta:
         db_table = "dealer"
