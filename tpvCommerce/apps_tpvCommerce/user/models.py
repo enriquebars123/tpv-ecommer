@@ -64,7 +64,7 @@ class user(AbstractBaseUser, PermissionsMixin):
     is_active  = models.BooleanField(default=False,)
     is_staff = models.BooleanField(default=False,)
     is_superuser = models.BooleanField(default=True,)
-   
+
 
     objects = userManager()
 
@@ -95,6 +95,43 @@ class people(models.Model):
 
     class Meta:
         db_table = 'people'
-    
+
     def __str__(self):
         return self.lastName
+
+class submenu(models.Model):
+    name = models.CharField(max_length=30)
+    icon = models.CharField(max_length=30)
+    url = models.CharField(max_length=250)
+    level = models.IntegerField()
+    parent = models.CharField(max_length=50)
+    order = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'submenu'
+
+    def __str__(self):
+        return self.name
+
+class menu(models.Model):
+    submenu = models.ForeignKey(submenu, on_delete=models.CASCADE)
+    name = models.CharField(max_length=30)
+    icon = models.CharField(max_length=250)
+    url = models.CharField(max_length=250)
+    order = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'menu'
+
+    def __str__(self):
+        return self.name
+
+class profile(models.Model):
+    menu = models.ForeignKey(menu, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'profile'
+
+    def __str__(self):
+        return self.name
