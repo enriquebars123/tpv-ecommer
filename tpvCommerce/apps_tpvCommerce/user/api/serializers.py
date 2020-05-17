@@ -7,6 +7,9 @@ import django_filters
 
 from apps_tpvCommerce.user.models import user
 from apps_tpvCommerce.user.models import people
+from apps_tpvCommerce.user.models import submenu
+from apps_tpvCommerce.user.models import menu
+from apps_tpvCommerce.user.models import profile
 
 class userSerializers(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True,required=False)
@@ -44,4 +47,22 @@ class peopleSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = people
+        fields = '__all__'
+
+class submenuSerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = submenu
+        fields = '__all__'
+
+class menuSerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = menu
+        fields = '__all__'
+
+class profileSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = profile
         fields = '__all__'

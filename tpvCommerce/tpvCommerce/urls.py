@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url, include 
-from apps_tpvCommerce.user.api.views import * 
+from django.conf.urls import url, include
+from apps_tpvCommerce.user.api.views import *
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('api/v1/user', UserViewSet)
 router.register('api/v1/people', PeopleViewSet)
+router.register('api/v1/submenu', SubmenuViewSet)
+router.register('api/v1/menu', MenuViewSet)
+router.register('api/v1/profile', ProfileViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

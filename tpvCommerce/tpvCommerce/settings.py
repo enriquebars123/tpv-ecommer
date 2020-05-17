@@ -84,8 +84,8 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_DB_NAME', 'db_tpv'), # noqa
         'USER': os.environ.get('POSTGRES_DB_USER', 'postgres'), # noqa
         'PASSWORD': os.environ.get('POSTGRES_DB_PASSWORD', 'tpvpos.1235'), # noqa
-        #'HOST': os.environ.get('POSTGRES_SERVICE_HOST', '192.168.0.22'), # noqa
-        'HOST': os.environ.get('POSTGRES_SERVICE_HOST', 'localhost'), # noqa
+        'HOST': os.environ.get('POSTGRES_SERVICE_HOST', '192.168.99.100'), # noqa
+        #'HOST': os.environ.get('POSTGRES_SERVICE_HOST', 'localhost'), # noqa
         #'PORT': os.environ.get('POSTGRES_SERVICE_PORT', 5432), # noqa
         'PORT': os.environ.get('POSTGRES_SERVICE_PORT', 45432), # noqa
     },
